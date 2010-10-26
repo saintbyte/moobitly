@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" id="vkontakte">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+<title>123123123</title>
+<script type="text/javascript" src="mootools-core-1.3.js"></script>
+<script type="text/javascript" src="mootools-more.js"></script>
+<script type="text/javascript" src="../Sources/moobitly.js"></script>
+<head>
+<body>
+Long_Url<br />
+<input type="text" id="lurl" name="lurl" size="50" value="http://code.google.com/intl/ru-RU/apis/libraries/devguide.html?lsd=lsd#mootools">
+<br /><br />
+<input type="text" id="surl" name="surl" size="50">
+<br /><br />
+<a href="javascript:shorturl_2()">0000000000000000000000</a>
+<script>
+ var lurl = $('lurl').value;
+ var c = $('surl');
+ var bitly_api_login = 'saintbyte';       // Insert You Key BitLy Login here
+ var bitly_api_key   = 'R_952ada93d53148668cf1452e62fdef09';  // Insert you BitLy Api Key
+ //---------------------------------------------------------------------
+ function shorturl_2()
+ {
+  var mb = new Moobitly('saintbyte','R_952ada93d53148668cf1452e62fdef09');
+
+  mb.addEvent('start',   function() {alert('start')});
+  mb.addEvent('shorten', function() {alert('shorten')});
+  mb.addEvent('url',   function(txt) {$('surl').value = txt;});
+  
+  mb.Shorten(lurl);
+ }
+</script>
+</body>
+</html>
